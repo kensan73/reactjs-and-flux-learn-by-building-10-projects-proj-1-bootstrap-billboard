@@ -3,8 +3,15 @@
 <html>
 <head>
     <title>Welcome</title>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/coffee-script/1.1.2/coffee-script.min.js"></script>
+    <script type="text/coffeescript">
+        window.learning = ->
+          "I am learning coffeescript"
+    </script>
+    <script type="text/javascript">
+      setTimeout(function(){ console.log(window.learning()); }, 1000);
+    </script>
 </head>
 <body>
-
 </body>
 </html>
