@@ -26,6 +26,11 @@
 
 <script type="text/babel">
   var Navbar = React.createClass({
+    getDefaultProps: function(){
+        return {
+          brand: 'my generic website',
+        }
+    },
     render: function () {
       return (
         <div>
@@ -100,7 +105,7 @@
     render: function () {
       return (
         <div>
-          <Navbar brand="my custo"/>
+          <Navbar />
           <Jumbotron/>
           <MainContent/>
           <Footer/>
