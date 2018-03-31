@@ -1,0 +1,14 @@
+{
+  "name": "reactjs-and-flux-learn-by-building-10-projects-proj-1-bootstrap-billboard",
+  "engines": {
+    "node": "4.2.6"
+  },
+  "version": "1.0.0",
+  "description": "first project from the online course",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

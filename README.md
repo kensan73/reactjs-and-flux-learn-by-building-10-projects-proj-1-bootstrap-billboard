@@ -1,0 +1,1 @@
+# Kata from the class named in the repo
