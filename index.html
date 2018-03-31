@@ -71,46 +71,20 @@
           }
         });
 
+        var App = React.createClass({
+            render: function(){
+              return(
+                <div>
+                    <Navbar />
+                </div>
+              )
+            }
+        });
+
         ReactDOM.render(
-          <Navbar />,
+          <App />,
           document.getElementById('app')
         );
     </script>
-    <!--<script type="text/babel">-->
-        <!--var Navbar = React.createClass({-->
-          <!--render: function(){-->
-            <!--return(-->
-              <!--<div>-->
-                <!--<nav className="navbar navbar-default jumbotron-navbar">-->
-                  <!--<div className="container-fluid">-->
-                    <!--<div className="navbar-header">-->
-                      <!--<button type="button" className="navbar-toggle collapsed" data-toggle="collapse"-->
-                              <!--data-target="#bs-example-navbar-collapse-1" aria-expanded="false">-->
-                        <!--<span className="sr-only">Toggle navigation</span>-->
-                        <!--<span className="icon-bar"></span>-->
-                        <!--<span className="icon-bar"></span>-->
-                        <!--<span className="icon-bar"></span>-->
-                      <!--</button>-->
-                      <!--<a className="navbar-brand" href="#">Brand</a>-->
-                    <!--</div>-->
-
-                    <!--<div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">-->
-                      <!--<ul className="nav navbar-nav">-->
-                        <!--<li className="active"><a href="#">Link <span className="sr-only">(current)</span></a></li>-->
-                        <!--<li><a href="#">About</a></li>-->
-                      <!--</ul>-->
-                    <!--</div>-->
-                  <!--</div>-->
-                <!--</nav>-->
-              <!--</div>-->
-            <!--)-->
-          <!--}-->
-        <!--});-->
-
-        <!--ReactDOM.render(-->
-          <!--<Navbar />,-->
-          <!--document.getElementById('app')-->
-        <!--);-->
-    <!--</script>-->
 </body>
 </html>
