@@ -29,12 +29,22 @@
     propTypes: {
       brand: React.PropTypes.string
     },
-    getDefaultProps: function(){
-        return {
-          brand: 'my generic website',
-        }
+    getDefaultProps: function () {
+      return {
+        brand: 'my generic website',
+      }
     },
     render: function () {
+      var homeActive = '';
+      var aboutActive = '';
+
+      if(this.props.page == 'home'){
+        homeActive = 'active';
+      }
+      else if(this.props.page == 'about'){
+        aboutActive = 'active';
+      }
+
       return (
         <div>
           <nav className="navbar navbar-default jumbotron-navbar">
@@ -52,8 +62,8 @@
 
               <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul className="nav navbar-nav">
-                  <li className="active"><a href="#">Link <span className="sr-only">(current)</span></a></li>
-                  <li><a href="#">About</a></li>
+                  <li onClick={this.props.homeClick} className={homeActive}><a href="#">Home</a></li>
+                  <li onClick={this.props.aboutClick} className={aboutActive}><a href="#">About</a></li>
                 </ul>
               </div>
             </div>
@@ -91,6 +101,18 @@
     }
   });
 
+  var AboutContent = React.createClass({
+    render: function () {
+      return (
+        <div className="container">
+          <div className="row">
+            About
+          </div>
+        </div>
+      )
+    }
+  });
+
   var Footer = React.createClass({
     render: function () {
       return (
@@ -105,12 +127,43 @@
   });
 
   var App = React.createClass({
+    getInitialState: function () {
+      return {
+        page: 'home'
+      }
+    },
+    onHomeClick: function () {
+      this.setState({
+        page: 'home'
+      });
+    },
+    onAboutClick: function () {
+      this.setState({
+        page: 'about'
+      });
+    },
     render: function () {
+      let mainContent = <MainContent/>;
+      let aboutContent = <AboutContent/>;
+      let jumbotron = <Jumbotron/>;
+
+      if(this.state.page == 'home'){
+        aboutContent = undefined;
+      }
+      else{
+        mainContent = undefined;
+        jumbotron = undefined;
+      }
       return (
         <div>
-          <Navbar />
-          <Jumbotron/>
-          <MainContent/>
+          <Navbar
+            page={this.state.page}
+            homeClick={this.onHomeClick}
+            aboutClick={this.onAboutClick}
+          />
+          {jumbotron}
+          {mainContent}
+          {aboutContent}
           <Footer/>
         </div>
       )
